@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import java.awt.Toolkit;
 
 
 public class Frame extends JFrame {
@@ -13,11 +14,13 @@ public class Frame extends JFrame {
 	JMenuBar menuBar;
 	JMenu menuCadastrar;
 	JMenu menuConsultar;
-	JMenuItem itemCadastrarProfessor;
+	JMenuItem itemCadastroAluno;
+	JMenuItem itemCadastroProfessor;
 	
 	
 	public Frame(){
 		super("Sagres");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\Desktop\\musicas\\sagres\\Imagens\\unnamed.png"));
 		this.setVisible(true);
 		this.setSize(800, 600);
 		menuBar = new JMenuBar();
@@ -34,7 +37,8 @@ public class Frame extends JFrame {
 		if(menuCadastrar == null) {
 			menuCadastrar = new JMenu();
 			menuCadastrar.setText("Cadastrar");
-			menuCadastrar.add(getItemCadastrarProfessor());
+			menuCadastrar.add(getItemCadastroAluno());
+			menuCadastrar.add(getItemCadastroProfessor());
 		}	
 		return menuCadastrar;
 	}
@@ -46,12 +50,20 @@ public class Frame extends JFrame {
 		return menuConsultar;
 	}
 	
-	public JMenuItem getItemCadastrarProfessor(){
-		if(itemCadastrarProfessor == null) {
-			itemCadastrarProfessor = new JMenuItem();
-			itemCadastrarProfessor.setText("Proferssor");
+	public JMenuItem getItemCadastroAluno(){
+		if(itemCadastroAluno == null) {
+			itemCadastroAluno = new JMenuItem();
+			itemCadastroAluno.setText("Aluno");
 		}	
-		return itemCadastrarProfessor;
+		return itemCadastroAluno;
+	}
+	
+	public JMenuItem getItemCadastroProfessor(){
+		if(itemCadastroProfessor == null) {
+			itemCadastroProfessor = new JMenuItem();
+			itemCadastroProfessor.setText("Proferssor");
+		}	
+		return itemCadastroProfessor;
 	}
 	
 	

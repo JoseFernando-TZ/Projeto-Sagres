@@ -16,7 +16,7 @@ public class PanelCadastrarProfessor extends JPanel {
 	public PanelCadastrarProfessor() {
 		super();
 		this.setLayout(null);
-		this.setBackground(Color.gray);
+		this.setBackground(Color.red);
 		this.add(getTextFieldNomeAluno());
 		this.add(getTextFieldCursoAluno());
 		this.add(getTextFieldMatriculaAluno());

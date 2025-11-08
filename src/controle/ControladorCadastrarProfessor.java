@@ -28,11 +28,6 @@ public class ControladorCadastrarProfessor implements ActionListener{
 	}
 
 	private void cadastrarProfessor() {
-		Aluno a = new Aluno(
-		panelCadastrarProfessor.getTextFieldNomeAluno().getText(),
-		panelCadastrarProfessor.getTextFieldCursoAluno().getText(),
-		panelCadastrarProfessor.getTextFieldMatriculaAluno().getText());
-
 		
 	}
 

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import visao.Frame;
+import visao.PanelCadastrarAluno;
 import visao.PanelCadastrarProfessor;
 
 public class ControladorFrame implements ActionListener{
@@ -11,7 +12,9 @@ public class ControladorFrame implements ActionListener{
 	
 	
 	Frame frame;
-	PanelCadastrarProfessor panelCadastrarAluno;
+	PanelCadastrarAluno panelCadastrarAluno;
+	PanelCadastrarProfessor panelCadastrarProfessor;
+	ControladorCadastrarAluno controladorCadastrarAluno;
 	ControladorCadastrarProfessor controladorCadastrarProfessor;
 	
 	public ControladorFrame() {	
@@ -22,7 +25,8 @@ public class ControladorFrame implements ActionListener{
 	}
 	
 	private void addEventos() {
-		frame.getItemCadastrarProfessor().addActionListener(this);
+		frame.getItemCadastroAluno().addActionListener(this);
+		frame.getItemCadastroProfessor().addActionListener(this);
 		
 	}
 
@@ -34,9 +38,17 @@ public class ControladorFrame implements ActionListener{
 
 	public void actionPerformed(ActionEvent e) {
 		
-		if(e.getSource() == frame.getItemCadastrarProfessor()) {
-			panelCadastrarAluno = new PanelCadastrarProfessor();
-			controladorCadastrarProfessor = new ControladorCadastrarProfessor(panelCadastrarAluno);
+		if(e.getSource() == frame.getItemCadastroProfessor()) {
+			panelCadastrarProfessor = new PanelCadastrarProfessor();
+			controladorCadastrarProfessor = new ControladorCadastrarProfessor(panelCadastrarProfessor);
+			frame.setContentPane(panelCadastrarProfessor);
+			frame.repaint();
+			frame.validate();
+		}
+		
+		if(e.getSource() == frame.getItemCadastroAluno()) {
+			panelCadastrarAluno = new PanelCadastrarAluno();
+			controladorCadastrarAluno = new ControladorCadastrarAluno(panelCadastrarAluno);
 			frame.setContentPane(panelCadastrarAluno);
 			frame.repaint();
 			frame.validate();
