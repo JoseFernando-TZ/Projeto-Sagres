@@ -1,8 +1,10 @@
 package visao;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -16,11 +18,16 @@ public class PanelCadastrarProfessor extends JPanel {
 	public PanelCadastrarProfessor() {
 		super();
 		this.setLayout(null);
-		this.setBackground(Color.red);
+		this.setBackground(new Color(244, 251, 255));
 		this.add(getTextFieldNomeAluno());
 		this.add(getTextFieldCursoAluno());
 		this.add(getTextFieldMatriculaAluno());
 		this.add(getButtonCadastrar());
+		
+		JLabel lblNomeProfessor = new JLabel("Nome: ");
+		lblNomeProfessor.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNomeProfessor.setBounds(80, 20, 225, 12);
+		add(lblNomeProfessor);
 	}
 	
 	public JTextField getTextFieldNomeAluno() {
