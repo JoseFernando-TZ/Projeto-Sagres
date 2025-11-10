@@ -1,5 +1,10 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import visao.PanelCadastrarAluno;
+
 public class Aluno {
 
 	private String nome;
@@ -12,18 +17,16 @@ public class Aluno {
 	private String cidade;
 	private String telefone;
 	private String email;
-	private String nomePai;
-	private int dddPai; 
-	private String telPai;
-	private String emailPai;
-	private String nomeMae;
-	private int dddMae;
-	private String telMae;
-	private String emailMae;
 	private String nomeResp;
 	private int dddResp;
 	private String telResp;
+	private ArrayList<String> whoResp = new ArrayList<>(Arrays.asList(
+			"Pai", "Mãe", "Pai adotivo", "Mãe Adotiva", "Avô", "Avó", 
+			"Tio", "Tia", "Padastro", "Madastra", "Irmão", "Irmã"));
 	
+	public Aluno() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -84,54 +87,6 @@ public class Aluno {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getNomePai() {
-		return nomePai;
-	}
-	public void setNomePai(String nomePai) {
-		this.nomePai = nomePai;
-	}
-	public int getDddPai() {
-		return dddPai;
-	}
-	public void setDddPai(int dddPai) {
-		this.dddPai = dddPai;
-	}
-	public String getTelPai() {
-		return telPai;
-	}
-	public void setTelPai(String telPai) {
-		this.telPai = telPai;
-	}
-	public String getEmailPai() {
-		return emailPai;
-	}
-	public void setEmailPai(String emailPai) {
-		this.emailPai = emailPai;
-	}
-	public String getNomeMae() {
-		return nomeMae;
-	}
-	public void setNomeMae(String nomeMae) {
-		this.nomeMae = nomeMae;
-	}
-	public int getDddMae() {
-		return dddMae;
-	}
-	public void setDddMae(int dddMae) {
-		this.dddMae = dddMae;
-	}
-	public String getTelMae() {
-		return telMae;
-	}
-	public void setTelMae(String telMae) {
-		this.telMae = telMae;
-	}
-	public String getEmailMae() {
-		return emailMae;
-	}
-	public void setEmailMae(String emailMae) {
-		this.emailMae = emailMae;
-	}
 	public String getNomeResp() {
 		return nomeResp;
 	}
@@ -149,6 +104,14 @@ public class Aluno {
 	}
 	public void setTelResp(String telResp) {
 		this.telResp = telResp;
+	}
+
+	public ArrayList<String> getWhoResp() {
+		return whoResp;
+	}
+
+	public void setWhoResp(ArrayList<String> whoResp) {
+		this.whoResp = whoResp;
 	}
 	
 }

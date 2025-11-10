@@ -9,20 +9,39 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
 
 public class PanelCadastrarAluno extends JPanel {
 
 	private JTextField textFieldNomeAluno;
 	private JTextField textFieldCPF;
-	private JTextField textFieldRG;
 	private JButton buttonCadastrar;
 	private JLabel lblEndereco;
+	private JTextField textFieldRG;
 	private JTextField textFieldRua;
-	private JTextField textFieldNumCasa;
 	private JTextField textFieldBairro;
-	private JTextField textFieldCidade;
 	private JTextField textFieldEmail;
-	private JTextField textField;
+	private JTextField textFieldNumCasa;
+	private JTextField textFieldCidade;
+	private JTextField textFieldTelefone;
+	private JButton btnLimparAl;
+	private JLabel lblNewLabel;
+	private JLabel lblNome;
+	private JLabel lblRg;
+	private JLabel lblCpf;
+	private JLabel lblEndereo;
+	private JLabel lblRua;
+	private JLabel lblBairro;
+	private JLabel lblEmail;
+	private JLabel lblN;
+	private JLabel lblCidade;
+	private JLabel lblTelefone;
+	private JLabel lblContato;
+	private JTextField textFieldDDD;
+	private JComboBox<String> comboBox;
 	
 	public PanelCadastrarAluno() {
 		super();
@@ -30,89 +49,29 @@ public class PanelCadastrarAluno extends JPanel {
 		this.setBackground(new Color(244, 251, 255));
 		this.add(getTextFieldNomeAluno());
 		this.add(getTextFieldCPF());
-		this.add(getTextFieldRG());
 		this.add(getButtonCadastrar());
-		
-		JLabel lblInfo = new JLabel("Preencha com informações do aluno:");
-		lblInfo.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblInfo.setBounds(80, 20, 225, 12);
-		add(lblInfo);
-		
-		JLabel lblNomeAluno = new JLabel("Nome:");
-		lblNomeAluno.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNomeAluno.setBounds(51, 66, 55, 12);
-		add(lblNomeAluno);
-		
-		JLabel lblCPF = new JLabel("CPF:");
-		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCPF.setBounds(315, 66, 28, 12);
-		add(lblCPF);
-		
-		JLabel lblRG = new JLabel("RG:");
-		lblRG.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblRG.setBounds(51, 103, 28, 12);
-		add(lblRG);
-		add(getLblEndereco());
-		
-		JLabel lblRua = new JLabel("Rua:");
-		lblRua.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblRua.setBounds(51, 164, 33, 12);
-		add(lblRua);
-		
-		JLabel lblN = new JLabel("N°:");
-		lblN.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblN.setBounds(315, 164, 28, 12);
-		add(lblN);
-		
-		JLabel lblBairro = new JLabel("Bairro:");
-		lblBairro.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblBairro.setBounds(51, 205, 47, 12);
-		add(lblBairro);
-		
-		JLabel lblCidade = new JLabel("Cidade:");
-		lblCidade.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCidade.setBounds(315, 205, 44, 12);
-		add(lblCidade);
-		
-		textFieldRua = new JTextField();
-		textFieldRua.setBounds(105, 157, 200, 30);
-		add(textFieldRua);
-		
-		textFieldNumCasa = new JTextField();
-		textFieldNumCasa.setBounds(373, 157, 62, 30);
-		add(textFieldNumCasa);
-		
-		textFieldBairro = new JTextField();
-		textFieldBairro.setBounds(105, 198, 200, 30);
-		add(textFieldBairro);
-		
-		textFieldCidade = new JTextField();
-		textFieldCidade.setBounds(373, 198, 200, 30);
-		add(textFieldCidade);
-		
-		JLabel lblEmail = new JLabel("Email:");
-		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblEmail.setBounds(51, 262, 44, 12);
-		add(lblEmail);
-		
-		textFieldEmail = new JTextField();
-		textFieldEmail.setBounds(105, 255, 200, 30);
-		add(textFieldEmail);
-		
-		textField = new JTextField();
-		textField.setBounds(373, 255, 200, 30);
-		add(textField);
-		
-		JLabel lblContato = new JLabel("Contato:");
-		lblContato.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblContato.setBounds(29, 241, 69, 12);
-		add(lblContato);
-		
-		JLabel lblTelefone = new JLabel("Telefone:");
-		lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTelefone.setForeground(new Color(0, 0, 0));
-		lblTelefone.setBounds(315, 262, 55, 12);
-		add(lblTelefone);
+		add(getTextFieldRG());
+		add(getTextFieldRua());
+		add(getTextFieldBairro());
+		add(getTextFieldEmail());
+		add(getTextFieldNumCasa());
+		add(getTextFieldCidade());
+		add(getTextFieldTelefone());
+		add(getBtnLimparAl());
+		add(getLblNewLabel());
+		add(getLblNome());
+		add(getLblRg());
+		add(getLblCpf());
+		add(getLblEndereo());
+		add(getLblRua());
+		add(getLblBairro());
+		add(getLblEmail());
+		add(getLblN());
+		add(getLblCidade());
+		add(getLblTelefone());
+		add(getLblContato());
+		add(getTextFieldDDD());
+		add(getComboBox());
 	}
 	
 	public JTextField getTextFieldNomeAluno() {
@@ -127,33 +86,188 @@ public class PanelCadastrarAluno extends JPanel {
 	public JTextField getTextFieldCPF() {
 		if(textFieldCPF == null) {
 			textFieldCPF = new JTextField();
-			textFieldCPF.setBounds(373, 59, 200, 30);
+			textFieldCPF.setBounds(399, 59, 211, 30);
 		}	
 		return textFieldCPF;
-	}
-	
-	public JTextField getTextFieldRG() {
-		if(textFieldRG == null) {
-			textFieldRG = new JTextField();
-			textFieldRG.setBounds(105, 99, 200, 30);
-		}	
-		return textFieldRG;
 	}
 	
 	public JButton getButtonCadastrar() {
 		if(buttonCadastrar == null) {
 			buttonCadastrar = new JButton();
 			buttonCadastrar.setText("Cadastrar");
-			buttonCadastrar.setBounds(449, 470, 200, 30);
+			buttonCadastrar.setBounds(450, 615, 200, 30);
 		}	
 		return buttonCadastrar;
 	}
-	private JLabel getLblEndereco() {
-		if (lblEndereco == null) {
-			lblEndereco = new JLabel("Endereço:");
-			lblEndereco.setFont(new Font("Tahoma", Font.PLAIN, 12));
-			lblEndereco.setBounds(29, 137, 69, 12);
+	public JTextField getTextFieldRG() {
+		if (textFieldRG == null) {
+			textFieldRG = new JTextField();
+			textFieldRG.setBackground(Color.WHITE);
+			textFieldRG.setBounds(105, 101, 200, 30);
 		}
-		return lblEndereco;
+		return textFieldRG;
+	}
+	public JTextField getTextFieldRua() {
+		if (textFieldRua == null) {
+			textFieldRua = new JTextField();
+			textFieldRua.setBackground(Color.WHITE);
+			textFieldRua.setBounds(105, 162, 200, 30);
+		}
+		return textFieldRua;
+	}
+	public JTextField getTextFieldBairro() {
+		if (textFieldBairro == null) {
+			textFieldBairro = new JTextField();
+			textFieldBairro.setBackground(Color.WHITE);
+			textFieldBairro.setBounds(105, 203, 200, 30);
+		}
+		return textFieldBairro;
+	}
+	public JTextField getTextFieldEmail() {
+		if (textFieldEmail == null) {
+			textFieldEmail = new JTextField();
+			textFieldEmail.setBackground(Color.WHITE);
+			textFieldEmail.setBounds(105, 260, 200, 30);
+		}
+		return textFieldEmail;
+	}
+	public JTextField getTextFieldNumCasa() {
+		if (textFieldNumCasa == null) {
+			textFieldNumCasa = new JTextField();
+			textFieldNumCasa.setBounds(399, 162, 72, 30);
+		}
+		return textFieldNumCasa;
+	}
+	public JTextField getTextFieldCidade() {
+		if (textFieldCidade == null) {
+			textFieldCidade = new JTextField();
+			textFieldCidade.setBounds(399, 203, 211, 30);
+		}
+		return textFieldCidade;
+	}
+	public JTextField getTextFieldTelefone() {
+		if (textFieldTelefone == null) {
+			textFieldTelefone = new JTextField();
+			textFieldTelefone.setBounds(477, 260, 133, 30);
+		}
+		return textFieldTelefone;
+	}
+	public JButton getBtnLimparAl() {
+		if (btnLimparAl == null) {
+			btnLimparAl = new JButton();
+			btnLimparAl.setText("Limpar");
+			btnLimparAl.setBounds(245, 317, 200, 30);
+		}
+		return btnLimparAl;
+	}
+	public JLabel getLblNewLabel() {
+		if (lblNewLabel == null) {
+			lblNewLabel = new JLabel("Preencha com informações do aluno:");
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
+			lblNewLabel.setBounds(104, 22, 240, 12);
+		}
+		return lblNewLabel;
+	}
+	public JLabel getLblNome() {
+		if (lblNome == null) {
+			lblNome = new JLabel("Nome:");
+			lblNome.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblNome.setBounds(49, 66, 46, 12);
+		}
+		return lblNome;
+	}
+	public JLabel getLblRg() {
+		if (lblRg == null) {
+			lblRg = new JLabel("RG:");
+			lblRg.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblRg.setBounds(49, 108, 46, 12);
+		}
+		return lblRg;
+	}
+	public JLabel getLblCpf() {
+		if (lblCpf == null) {
+			lblCpf = new JLabel("CPF:");
+			lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblCpf.setBounds(338, 66, 34, 12);
+		}
+		return lblCpf;
+	}
+	public JLabel getLblEndereo() {
+		if (lblEndereo == null) {
+			lblEndereo = new JLabel("Endereço:");
+			lblEndereo.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblEndereo.setBounds(30, 143, 72, 12);
+		}
+		return lblEndereo;
+	}
+	public JLabel getLblRua() {
+		if (lblRua == null) {
+			lblRua = new JLabel("Rua:");
+			lblRua.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblRua.setBounds(51, 169, 44, 12);
+		}
+		return lblRua;
+	}
+	public JLabel getLblBairro() {
+		if (lblBairro == null) {
+			lblBairro = new JLabel("Bairro:");
+			lblBairro.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblBairro.setBounds(49, 210, 72, 12);
+		}
+		return lblBairro;
+	}
+	public JLabel getLblEmail() {
+		if (lblEmail == null) {
+			lblEmail = new JLabel("Email:");
+			lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblEmail.setBounds(49, 267, 46, 12);
+		}
+		return lblEmail;
+	}
+	public JLabel getLblN() {
+		if (lblN == null) {
+			lblN = new JLabel("N°:");
+			lblN.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblN.setBounds(338, 169, 34, 12);
+		}
+		return lblN;
+	}
+	public JLabel getLblCidade() {
+		if (lblCidade == null) {
+			lblCidade = new JLabel("Cidade:");
+			lblCidade.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblCidade.setBounds(338, 210, 72, 12);
+		}
+		return lblCidade;
+	}
+	public JLabel getLblTelefone() {
+		if (lblTelefone == null) {
+			lblTelefone = new JLabel("Telefone:");
+			lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblTelefone.setBounds(338, 267, 62, 12);
+		}
+		return lblTelefone;
+	}
+	public JLabel getLblContato() {
+		if (lblContato == null) {
+			lblContato = new JLabel("Contato:");
+			lblContato.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblContato.setBounds(30, 245, 72, 12);
+		}
+		return lblContato;
+	}
+	public JTextField getTextFieldDDD() {
+		if (textFieldDDD == null) {
+			textFieldDDD = new JTextField();
+			textFieldDDD.setBounds(399, 260, 72, 30);
+		}
+		return textFieldDDD;
+	}
+	public JComboBox getComboBox() {
+		if (comboBox == null) {
+			comboBox = new JComboBox();
+			comboBox.setBounds(105, 400, 200, 30);
+		}
+		return comboBox;
 	}
 }
