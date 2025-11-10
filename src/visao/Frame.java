@@ -25,7 +25,7 @@ public class Frame extends JFrame {
 		super("Sagres");
 		setBackground(new Color(240, 255, 255));
 		getContentPane().setBackground(new Color(244, 251, 255));
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\Desktop\\musicas\\sagres\\Imagens\\unnamed.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(".\\Imagens\\unnamed.png"));
 		this.setVisible(true);
 		this.setSize(800, 750);
 		menuBar = new JMenuBar();
