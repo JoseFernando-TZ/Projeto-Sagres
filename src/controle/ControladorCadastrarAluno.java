@@ -16,7 +16,7 @@ public class ControladorCadastrarAluno implements ActionListener {
 	public ControladorCadastrarAluno(PanelCadastrarAluno panelCadastrarAluno) {
 		// TODO Auto-generated constructor stub
 		this.panelCadastrarAluno = panelCadastrarAluno;
-		loadComboBox();
+		panelCadastrarAluno.loadComboBox();
 		addEventos();
 	}
 	private void addEventos() {
@@ -26,24 +26,10 @@ public class ControladorCadastrarAluno implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == panelCadastrarAluno.getBtnLimparAl()) {
-			panelCadastrarAluno.getTextFieldNomeAluno().setText("");
-			panelCadastrarAluno.getTextFieldCPF().setText("");
-			panelCadastrarAluno.getTextFieldRG().setText("");
-			panelCadastrarAluno.getTextFieldRua().setText("");
-			panelCadastrarAluno.getTextFieldBairro().setText("");
-			panelCadastrarAluno.getTextFieldNumCasa().setText("");
-			panelCadastrarAluno.getTextFieldCidade().setText("");
-			panelCadastrarAluno.getTextFieldEmail().setText("");
-			panelCadastrarAluno.getTextFieldTelefone().setText("");
-			panelCadastrarAluno.getTextFieldDDD().setText("");
+			panelCadastrarAluno.limparCampos();
 		}
 		if(e.getSource() == panelCadastrarAluno.getButtonCadastrar()) {
 			
-		}
-	}
-	public void loadComboBox() {
-		for(String resp : al.getWhoResp()) {
-			panelCadastrarAluno.getComboBox().addItem(resp);
 		}
 	}
 	

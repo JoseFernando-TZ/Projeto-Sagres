@@ -5,6 +5,9 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import modelo.Aluno;
+
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -15,7 +18,8 @@ import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 
 public class PanelCadastrarAluno extends JPanel {
-
+	
+	Aluno al = new Aluno();
 	private JTextField textFieldNomeAluno;
 	private JTextField textFieldCPF;
 	private JButton buttonCadastrar;
@@ -270,4 +274,24 @@ public class PanelCadastrarAluno extends JPanel {
 		}
 		return comboBox;
 	}
+	//Limpa campos de texto do cadastro
+	public void limparCampos() {
+	getTextFieldNomeAluno().setText("");
+	getTextFieldCPF().setText("");
+	getTextFieldRG().setText("");
+	getTextFieldRua().setText("");
+	getTextFieldBairro().setText("");
+	getTextFieldNumCasa().setText("");
+	getTextFieldCidade().setText("");
+	getTextFieldEmail().setText("");
+	getTextFieldTelefone().setText("");
+	getTextFieldDDD().setText("");
+	}
+	//carrega o combo box do grau de parentesco
+	public void loadComboBox() {
+		for(String resp : al.getWhoResp()) {
+			getComboBox().addItem(resp);
+		}
+	}
+	
 }
