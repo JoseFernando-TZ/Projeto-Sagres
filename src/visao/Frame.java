@@ -75,7 +75,7 @@ public class Frame extends JFrame {
 	public JMenuItem getItemCadastroProfessor(){
 		if(itemCadastroProfessor == null) {
 			itemCadastroProfessor = new JMenuItem();
-			itemCadastroProfessor.setText("Proferssor");
+			itemCadastroProfessor.setText("Professor");
 		}	
 		return itemCadastroProfessor;
 	}
