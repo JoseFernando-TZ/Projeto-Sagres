@@ -19,6 +19,7 @@ public class Frame extends JFrame {
 	JMenu menuConsultar;
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
+	JMenuItem itemCadastroDisciplina;
 	
 	
 	public Frame(){
@@ -52,6 +53,7 @@ public class Frame extends JFrame {
 			menuCadastrar.setText("Cadastrar");
 			menuCadastrar.add(getItemCadastroAluno());
 			menuCadastrar.add(getItemCadastroProfessor());
+			menuCadastrar.add(getItemCadastroDisciplina());
 		}	
 		return menuCadastrar;
 	}
@@ -78,6 +80,14 @@ public class Frame extends JFrame {
 			itemCadastroProfessor.setText("Professor");
 		}	
 		return itemCadastroProfessor;
+	}
+	
+	public JMenuItem getItemCadastroDisciplina(){
+		if(itemCadastroDisciplina == null) {
+			itemCadastroDisciplina = new JMenuItem();
+			itemCadastroDisciplina.setText("Disciplina");
+		}	
+		return itemCadastroDisciplina;
 	}
 	
 	
