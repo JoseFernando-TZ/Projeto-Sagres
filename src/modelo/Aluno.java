@@ -8,7 +8,9 @@ import visao.PanelCadastrarAluno;
 public class Aluno {
 
 	private String nome;
-	private String dataNascimento;
+	private int diaNasc;
+	private int mesNasc;
+	private int anoNasc;
 	private String CPF;
 	private String RG;
 	private String rua;
@@ -33,11 +35,23 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDataNascimento() {
-		return dataNascimento;
+	public int getDiaNasc() {
+		return diaNasc;
 	}
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDiaNasc(int diaNasc) {
+		this.diaNasc = diaNasc;
+	}
+	public int getMesNasc() {
+		return mesNasc;
+	}
+	public void setMesNasc(int mesNasc) {
+		this.mesNasc = mesNasc;
+	}
+	public int getAnoNasc() {
+		return anoNasc;
+	}
+	public void setAnoNasc(int anoNasc) {
+		this.anoNasc = anoNasc;
 	}
 	public String getCPF() {
 		return CPF;
