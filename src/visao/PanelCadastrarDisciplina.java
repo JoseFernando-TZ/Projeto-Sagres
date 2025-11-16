@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
-public class PanelCadastroDisciplina extends JPanel{
+public class PanelCadastrarDisciplina extends JPanel{
 	private JButton buttonCadastrarDisciplina;
 	private JButton btnLimparDisciplina;
 	private JTextField textFieldNomeDisciplina;
@@ -18,7 +18,7 @@ public class PanelCadastroDisciplina extends JPanel{
 	private JLabel lblCodigoDisciplina;
 	private JLabel lblDescricaoDisciplina;
 
-	public PanelCadastroDisciplina(){
+	public PanelCadastrarDisciplina(){
 		super();
 		this.setLayout(null);
 		this.setBackground(new Color(244, 251, 255));
