@@ -5,6 +5,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
 import modelo.Aluno;
 
@@ -13,15 +14,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
+import javax.swing.JFormattedTextField;
 
 public class PanelCadastrarAluno extends JPanel {
 	
 	Aluno al = new Aluno();
 	private JTextField textFieldNomeAluno;
-	private JTextField textFieldCPF;
 	private JButton buttonCadastrar;
 	private JLabel lblEndereco;
 	private JTextField textFieldRG;
@@ -30,7 +32,6 @@ public class PanelCadastrarAluno extends JPanel {
 	private JTextField textFieldEmail;
 	private JTextField textFieldNumCasa;
 	private JTextField textFieldCidade;
-	private JTextField textFieldTelefone;
 	private JButton btnLimparAl;
 	private JLabel lblNewLabel;
 	private JLabel lblNome;
@@ -44,15 +45,16 @@ public class PanelCadastrarAluno extends JPanel {
 	private JLabel lblCidade;
 	private JLabel lblTelefone;
 	private JLabel lblContato;
-	private JTextField textFieldDDD;
 	private JComboBox<String> comboBox;
+	private JFormattedTextField formattedTextField;
+	private JFormattedTextField formattedTextFieldDDD;
+	private JFormattedTextField formattedTextFieldTel;
 	
 	public PanelCadastrarAluno() {
 		super();
 		this.setLayout(null);
 		this.setBackground(new Color(244, 251, 255));
 		this.add(getTextFieldNomeAluno());
-		this.add(getTextFieldCPF());
 		this.add(getButtonCadastrar());
 		add(getTextFieldRG());
 		add(getTextFieldRua());
@@ -60,7 +62,6 @@ public class PanelCadastrarAluno extends JPanel {
 		add(getTextFieldEmail());
 		add(getTextFieldNumCasa());
 		add(getTextFieldCidade());
-		add(getTextFieldTelefone());
 		add(getBtnLimparAl());
 		add(getLblNewLabel());
 		add(getLblNome());
@@ -74,8 +75,10 @@ public class PanelCadastrarAluno extends JPanel {
 		add(getLblCidade());
 		add(getLblTelefone());
 		add(getLblContato());
-		add(getTextFieldDDD());
 		add(getComboBox());
+		add(getFormattedTextFieldCPF());
+		add(getFormattedTextFieldDDD());
+		add(getFormattedTextFieldTel());
 	}
 	
 	public JTextField getTextFieldNomeAluno() {
@@ -85,14 +88,6 @@ public class PanelCadastrarAluno extends JPanel {
 			textFieldNomeAluno.setBounds(105, 59, 200, 30);
 		}	
 		return textFieldNomeAluno;
-	}
-	
-	public JTextField getTextFieldCPF() {
-		if(textFieldCPF == null) {
-			textFieldCPF = new JTextField();
-			textFieldCPF.setBounds(399, 59, 211, 30);
-		}	
-		return textFieldCPF;
 	}
 	
 	public JButton getButtonCadastrar() {
@@ -148,13 +143,6 @@ public class PanelCadastrarAluno extends JPanel {
 			textFieldCidade.setBounds(399, 203, 211, 30);
 		}
 		return textFieldCidade;
-	}
-	public JTextField getTextFieldTelefone() {
-		if (textFieldTelefone == null) {
-			textFieldTelefone = new JTextField();
-			textFieldTelefone.setBounds(477, 260, 133, 30);
-		}
-		return textFieldTelefone;
 	}
 	public JButton getBtnLimparAl() {
 		if (btnLimparAl == null) {
@@ -260,13 +248,6 @@ public class PanelCadastrarAluno extends JPanel {
 		}
 		return lblContato;
 	}
-	public JTextField getTextFieldDDD() {
-		if (textFieldDDD == null) {
-			textFieldDDD = new JTextField();
-			textFieldDDD.setBounds(399, 260, 72, 30);
-		}
-		return textFieldDDD;
-	}
 	public JComboBox getComboBox() {
 		if (comboBox == null) {
 			comboBox = new JComboBox();
@@ -277,15 +258,15 @@ public class PanelCadastrarAluno extends JPanel {
 	//Limpa campos de texto do cadastro
 	public void limparCampos() {
 	getTextFieldNomeAluno().setText("");
-	getTextFieldCPF().setText("");
+	getFormattedTextFieldCPF().setText("");
 	getTextFieldRG().setText("");
 	getTextFieldRua().setText("");
 	getTextFieldBairro().setText("");
 	getTextFieldNumCasa().setText("");
 	getTextFieldCidade().setText("");
 	getTextFieldEmail().setText("");
-	getTextFieldTelefone().setText("");
-	getTextFieldDDD().setText("");
+	getFormattedTextFieldTel().setText("");
+	getFormattedTextFieldDDD().setText("");
 	}
 	//carrega o combo box do grau de parentesco
 	public void loadComboBox() {
@@ -294,4 +275,48 @@ public class PanelCadastrarAluno extends JPanel {
 		}
 	}
 	
+	//Formata o TextField do cpf e deixa apenas colocar números
+	private JFormattedTextField getFormattedTextFieldCPF() {
+		
+		try {
+			MaskFormatter cpfMascara = new MaskFormatter("###.###.###-##");
+			cpfMascara.setPlaceholderCharacter('_');
+			if (formattedTextField == null) {
+				formattedTextField = new JFormattedTextField(cpfMascara);
+				formattedTextField.setBounds(399, 59, 211, 30);
+			}
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return formattedTextField;
+	}
+	private JFormattedTextField getFormattedTextFieldDDD() {
+		try {
+			MaskFormatter DDDMask = new MaskFormatter("(##)");
+			DDDMask.setPlaceholderCharacter('_');
+		if (formattedTextFieldDDD == null) {
+			formattedTextFieldDDD = new JFormattedTextField(DDDMask);
+			formattedTextFieldDDD.setBounds(399, 260, 72, 30);
+		}
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return formattedTextFieldDDD;
+	}
+	private JFormattedTextField getFormattedTextFieldTel() {
+		try {
+			MaskFormatter telMask = new MaskFormatter("9 ####-####");
+			telMask.setPlaceholderCharacter('_');
+		if (formattedTextFieldTel == null) {
+			formattedTextFieldTel = new JFormattedTextField(telMask);
+			formattedTextFieldTel.setBounds(481, 260, 129, 30);
+		}
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return formattedTextFieldTel;
+	}
 }
