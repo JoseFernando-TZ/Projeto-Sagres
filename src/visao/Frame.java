@@ -20,6 +20,8 @@ public class Frame extends JFrame {
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
 	JMenuItem itemCadastroDisciplina;
+	private JMenuItem itemConsultarAluno;
+	private JMenuItem itemConsultarProfessor;
 	
 	
 	public Frame(){
@@ -62,6 +64,8 @@ public class Frame extends JFrame {
 			menuConsultar = new JMenu();
 			menuConsultar.setForeground(new Color(255, 255, 255));
 			menuConsultar.setText("Consultar");
+			menuConsultar.add(getItemConsultarAluno());
+			menuConsultar.add(getItemConsultarProfessor());
 		}	
 		return menuConsultar;
 	}
@@ -91,4 +95,16 @@ public class Frame extends JFrame {
 	}
 	
 	
+	public JMenuItem getItemConsultarAluno() {
+		if (itemConsultarAluno == null) {
+			itemConsultarAluno = new JMenuItem("Aluno");
+		}
+		return itemConsultarAluno;
+	}
+	public JMenuItem getItemConsultarProfessor() {
+		if (itemConsultarProfessor == null) {
+			itemConsultarProfessor = new JMenuItem("Professor");
+		}
+		return itemConsultarProfessor;
+	}
 }
