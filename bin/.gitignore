@@ -1,3 +1,5 @@
-/visao/
-/modelo/
+/.classpath
+/.project
 /controle/
+/modelo/
+/visao/
