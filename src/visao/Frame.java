@@ -18,6 +18,7 @@ public class Frame extends JFrame {
 	JMenu menuCadastrar;
 	JMenu menuConsultar;
 	JMenu menuFinanceiro;
+	JMenu menuContato;
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
 	JMenuItem itemCadastroDisciplina;
@@ -42,6 +43,7 @@ public class Frame extends JFrame {
 		menuBar.add(getMenuCadastrar());
 		menuBar.add(getMenuConsultar());
 		menuBar.add(getMenuFinanceiro());
+		menuBar.add(getMenuContato());
 		this.setJMenuBar(menuBar);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -86,6 +88,16 @@ public class Frame extends JFrame {
 			menuFinanceiro.add(getItemContas());
 		}
 		return menuFinanceiro;
+	}
+	
+	public JMenu getMenuContato() {
+		if(menuContato == null) {
+			menuContato = new JMenu();
+			menuContato.setForeground(new Color(255, 255, 255));
+			menuContato.setText("contato");
+			
+		}
+		return menuContato;
 	}
 	
 	public JMenuItem getItemCadastroAluno(){
