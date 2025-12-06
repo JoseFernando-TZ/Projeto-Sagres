@@ -115,7 +115,7 @@ public class PanelCadastrarDisciplina extends JPanel{
 	private JLabel getLblDescricaoDisciplina() {
 		if (lblDescricaoDisciplina == null) {
 			lblDescricaoDisciplina = new JLabel("Descrição");
-			lblDescricaoDisciplina.setBounds(10, 229, 44, 12);
+			lblDescricaoDisciplina.setBounds(10, 229, 85, 12);
 			
 		}
 		return lblDescricaoDisciplina;

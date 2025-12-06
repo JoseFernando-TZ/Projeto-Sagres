@@ -4,7 +4,9 @@ public class Professor {
 	private String nomeProfessor;
 	private String CPFprofessor;
 	private String RGprofessor;
-	private String dataNascimentoProfessor;
+	private int diaNasc;
+	private int mesNasc;
+	private int anoNasc;
 	private String ruaProfessor;
 	private String numCasaProfessor;
 	private String bairroProfessor;
@@ -23,8 +25,23 @@ public class Professor {
 	public String getRGprofessor() {
 		return RGprofessor;
 	}
-	public String getDataNascimentoProfessor() {
-		return dataNascimentoProfessor;
+	public int getDiaNasc() {
+		return diaNasc;
+	}
+	public void setDiaNasc(int diaNasc) {
+		this.diaNasc = diaNasc;
+	}
+	public int getMesNasc() {
+		return mesNasc;
+	}
+	public void setMesNasc(int mesNasc) {
+		this.mesNasc = mesNasc;
+	}
+	public int getAnoNasc() {
+		return anoNasc;
+	}
+	public void setAnoNasc(int anoNasc) {
+		this.anoNasc = anoNasc;
 	}
 	public String getRuaProfessor() {
 		return ruaProfessor;

@@ -17,11 +17,17 @@ public class Frame extends JFrame {
 	JMenuBar menuBar;
 	JMenu menuCadastrar;
 	JMenu menuConsultar;
+	JMenu menuFinanceiro;
+	JMenu menuContato;
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
 	JMenuItem itemCadastroDisciplina;
 	private JMenuItem itemConsultarAluno;
 	private JMenuItem itemConsultarProfessor;
+	JMenuItem itemMensalidades;
+	JMenuItem itemReceitasDespesas;
+	JMenuItem itemFluxo;
+	JMenuItem itemContas;
 	
 	
 	public Frame(){
@@ -36,6 +42,8 @@ public class Frame extends JFrame {
 		menuBar.setBackground(new Color(60, 167, 255));
 		menuBar.add(getMenuCadastrar());
 		menuBar.add(getMenuConsultar());
+		menuBar.add(getMenuFinanceiro());
+		menuBar.add(getMenuContato());
 		this.setJMenuBar(menuBar);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -68,6 +76,28 @@ public class Frame extends JFrame {
 			menuConsultar.add(getItemConsultarProfessor());
 		}	
 		return menuConsultar;
+	}
+	public JMenu getMenuFinanceiro() {
+		if(menuFinanceiro == null) {
+			menuFinanceiro = new JMenu();
+			menuFinanceiro.setForeground(new Color(255, 255, 255));
+			menuFinanceiro.setText("Financeiro");
+			menuFinanceiro.add(getItemMensalidades());
+			menuFinanceiro.add(getItemReceitasDespesas());
+			menuFinanceiro.add(getItemFluxo());
+			menuFinanceiro.add(getItemContas());
+		}
+		return menuFinanceiro;
+	}
+	
+	public JMenu getMenuContato() {
+		if(menuContato == null) {
+			menuContato = new JMenu();
+			menuContato.setForeground(new Color(255, 255, 255));
+			menuContato.setText("contato");
+			
+		}
+		return menuContato;
 	}
 	
 	public JMenuItem getItemCadastroAluno(){
@@ -107,4 +137,33 @@ public class Frame extends JFrame {
 		}
 		return itemConsultarProfessor;
 	}
+	public JMenuItem getItemMensalidades() {
+		if(itemMensalidades == null) {
+			itemMensalidades = new JMenuItem("mensalidades");
+		}
+		return itemMensalidades;
+	}
+
+
+	public JMenuItem getItemReceitasDespesas() {
+		if(itemReceitasDespesas == null) {
+		itemReceitasDespesas = new JMenuItem("despesas");
+		}
+		return itemReceitasDespesas;
+	}
+
+	public JMenuItem getItemFluxo() {
+		if(itemFluxo == null) {
+		itemFluxo = new JMenuItem("fluxos/relatórios");
+		}
+		return itemFluxo;
+	}
+
+	public JMenuItem getItemContas() {
+		if(itemContas == null) {
+			itemContas = new JMenuItem("Contas");
+			}
+		return itemContas;
+	}
+	
 }
