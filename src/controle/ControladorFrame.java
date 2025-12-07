@@ -9,6 +9,7 @@ import visao.PanelCadastrarDisciplina;
 import visao.PanelCadastrarProfessor;
 import visao.PanelConsultarAluno;
 import visao.PanelConsultarProfessor;
+import visao.PanelModoDeVisualizacao;
 
 public class ControladorFrame implements ActionListener{
 
@@ -22,10 +23,13 @@ public class ControladorFrame implements ActionListener{
 	PanelCadastrarDisciplina panelCadastrarDisciplina;
 	PanelConsultarAluno panelConsultarAluno;
 	PanelConsultarProfessor panelConsultarProfessor;
+	PanelModoDeVisualizacao panelModoDeVisualizacao;
 	ControladorCadastrarAluno controladorCadastrarAluno;
 	ControladorCadastrarProfessor controladorCadastrarProfessor;
 	
+	
 	public ControladorFrame() {	
+		panelModoDeVisualizacao = new PanelModoDeVisualizacao();
 		panelCadastrarProfessor = new PanelCadastrarProfessor();
 		panelCadastrarAluno = new PanelCadastrarAluno();
 		panelCadastrarDisciplina = new PanelCadastrarDisciplina();
@@ -34,6 +38,7 @@ public class ControladorFrame implements ActionListener{
 		controladorCadastrarAluno = new ControladorCadastrarAluno(panelCadastrarAluno);
 		controladorCadastrarProfessor = new ControladorCadastrarProfessor(panelCadastrarProfessor);
 		frame = new Frame();
+		frame.setContentPane(panelModoDeVisualizacao);
 		frame.repaint();
 		frame.validate();
 		addEventos();
@@ -49,7 +54,6 @@ public class ControladorFrame implements ActionListener{
 
 	public static void main(String[] args) {
 		new ControladorFrame();
-		
 	}
 
 

@@ -16,6 +16,26 @@ public class Professor {
 	private String formacao;
 	private String disciplinaProfessor;
 	
+	public Professor(
+			String nomeProfessor, String CPFprofessor, String RGprofessor, int diaNasc, int mesNasc, int anoNasc, String ruaProfessor, String numCasaProfessor,
+			String bairroProfessor, String cidadeProfessor, String telefoneProfessor, String emailProfessor, String formacao, String disciplinaProfessor) {
+		// TODO Auto-generated constructor stub
+		this.nomeProfessor = nomeProfessor;
+		this.CPFprofessor = CPFprofessor;
+		this.RGprofessor = RGprofessor;
+		this.diaNasc = diaNasc;
+		this.mesNasc = mesNasc;
+		this.anoNasc = anoNasc;
+		this.ruaProfessor = ruaProfessor;
+		this.numCasaProfessor = numCasaProfessor;
+		this.bairroProfessor = bairroProfessor;
+		this.cidadeProfessor = cidadeProfessor;
+		this.telefoneProfessor = telefoneProfessor;
+		this.emailProfessor = emailProfessor;
+		this.formacao = formacao;
+		this.disciplinaProfessor = disciplinaProfessor;
+	}
+	
 	public String getNomeProfessor() {
 		return nomeProfessor;
 	}

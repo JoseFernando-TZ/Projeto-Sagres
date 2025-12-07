@@ -25,6 +25,7 @@ public class Aluno {
 	private ArrayList<String> whoResp = new ArrayList<>(Arrays.asList(
 			"Pai", "Mãe", "Pai adotivo", "Mãe Adotiva", "Avô", "Avó", 
 			"Tio", "Tia", "Padastro", "Madastra", "Irmão", "Irmã"));
+	private ArrayList<String> disciplinas = new ArrayList<String>();
 	
 	public Aluno() {
 		// TODO Auto-generated constructor stub
@@ -127,5 +128,4 @@ public class Aluno {
 	public void setWhoResp(ArrayList<String> whoResp) {
 		this.whoResp = whoResp;
 	}
-	
 }

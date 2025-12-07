@@ -5,18 +5,18 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class PanelCadastrarDisciplina extends JPanel{
 	private JButton buttonCadastrarDisciplina;
 	private JButton btnLimparDisciplina;
 	private JTextField textFieldNomeDisciplina;
-	private JTextField textFieldCodigoDisciplina;
 	private JTextField textFieldCargaHorariaDisciplina;
-	private JTextField textFieldDescricaoDisciplina;
 	private JLabel lblNomeDisciplina;
 	private JLabel lblCargaHorariaDisciplina;
-	private JLabel lblCodigoDisciplina;
 	private JLabel lblDescricaoDisciplina;
+	private JTextArea textArea;
+	private JButton btnCadastrar;
 
 	public PanelCadastrarDisciplina(){
 		super();
@@ -25,13 +25,12 @@ public class PanelCadastrarDisciplina extends JPanel{
 		this.add(getBtnLimparDisciplina());
 		this.add(getButtonCadastrarDisciplina());
 		this.add(getTextFieldNomeDisciplina());
-		this.add(getTextFieldCodigoDisciplina());
 		this.add(getTextFieldCargaHorariaDisciplina());
-		add(getTextFieldDescricaoDisciplina());
 		add(getLblNomeDisciplina());
 		add(getLblCargaHorariaDisciplina());
-		add(getLblCodigoDisciplina());
 		add(getLblDescricaoDisciplina());
+		add(getTextArea());
+		add(getBtnCadastrar());
 		
 	}
 	
@@ -48,7 +47,7 @@ public class PanelCadastrarDisciplina extends JPanel{
 		if (btnLimparDisciplina == null) {
 			btnLimparDisciplina = new JButton();
 			btnLimparDisciplina.setText("Limpar");
-			btnLimparDisciplina.setBounds(245, 317, 200, 30);
+			btnLimparDisciplina.setBounds(245, 382, 200, 30);
 		}
 		return btnLimparDisciplina;
 	}
@@ -60,14 +59,6 @@ public class PanelCadastrarDisciplina extends JPanel{
 		}	
 		return textFieldNomeDisciplina;
 	}
-	
-	public JTextField getTextFieldCodigoDisciplina() {
-		if(textFieldCodigoDisciplina == null) {
-			textFieldCodigoDisciplina = new JTextField();
-			textFieldCodigoDisciplina.setBounds(410, 59, 211, 30);
-		}	
-		return textFieldCodigoDisciplina;
-	}
 
 	public JTextField getTextFieldCargaHorariaDisciplina() {
 		if(textFieldCargaHorariaDisciplina == null) {
@@ -76,15 +67,6 @@ public class PanelCadastrarDisciplina extends JPanel{
 	}	
 		return textFieldCargaHorariaDisciplina;
 }
-	  
-	private JTextField getTextFieldDescricaoDisciplina() {
-		if (textFieldDescricaoDisciplina == null) {
-			textFieldDescricaoDisciplina = new JTextField();
-			textFieldDescricaoDisciplina.setBounds(105, 181, 305, 109);
-			textFieldDescricaoDisciplina.setColumns(10);
-		}
-		return textFieldDescricaoDisciplina;
-	}
 	
 	private JLabel getLblNomeDisciplina() {
 		if (lblNomeDisciplina == null) {
@@ -103,22 +85,28 @@ public class PanelCadastrarDisciplina extends JPanel{
 		}
 		return lblCargaHorariaDisciplina;
 	}
-	
-	private JLabel getLblCodigoDisciplina() {
-		if (lblCodigoDisciplina == null) {
-			lblCodigoDisciplina = new JLabel("Codigo:");
-			lblCodigoDisciplina.setBounds(315, 67, 44, 12);
-			
-		}
-		return lblCodigoDisciplina;
-	}
 	private JLabel getLblDescricaoDisciplina() {
 		if (lblDescricaoDisciplina == null) {
-			lblDescricaoDisciplina = new JLabel("Descrição");
-			lblDescricaoDisciplina.setBounds(10, 229, 85, 12);
+			lblDescricaoDisciplina = new JLabel("Descrição:");
+			lblDescricaoDisciplina.setBounds(10, 195, 85, 12);
 			
 		}
 		return lblDescricaoDisciplina;
 	
 }
+	private JTextArea getTextArea() {
+		if (textArea == null) {
+			textArea = new JTextArea();
+			textArea.setBounds(105, 177, 378, 105);
+		}
+		return textArea;
+	}
+	private JButton getBtnCadastrar() {
+		if (btnCadastrar == null) {
+			btnCadastrar = new JButton();
+			btnCadastrar.setText("Cadastrar");
+			btnCadastrar.setBounds(245, 329, 200, 30);
+		}
+		return btnCadastrar;
+	}
 }
