@@ -29,7 +29,7 @@ public class ControladorCadastrarAluno implements ActionListener {
 			panelCadastrarAluno.limparCampos();
 		}
 		if(e.getSource() == panelCadastrarAluno.getButtonCadastrar()) {
-			
+			listaAlunos.add(al);
 		}
 	}
 	

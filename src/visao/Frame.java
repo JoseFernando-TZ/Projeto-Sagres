@@ -36,7 +36,8 @@ public class Frame extends JFrame {
 		getContentPane().setBackground(new Color(244, 251, 255));
 		setIconImage(Toolkit.getDefaultToolkit().getImage(".\\Imagens\\unnamed.png"));
 		this.setVisible(true);
-		this.setSize(800, 750);
+		this.setSize(888, 742);
+		this.setResizable(false);
 		menuBar = new JMenuBar();
 		menuBar.setBorderPainted(false);
 		menuBar.setBackground(new Color(60, 167, 255));
