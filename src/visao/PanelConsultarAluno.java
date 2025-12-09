@@ -92,11 +92,13 @@ public class PanelConsultarAluno extends JPanel{
 		}
 		return btnExcluir;
 	}
-	private JComboBox getComboBox() {
+	public JComboBox getComboBox() {
 		if (comboBox == null) {
 			comboBox = new JComboBox();
 			comboBox.setBounds(250, 69, 227, 29);
 		}
 		return comboBox;
 	}
+	
+	
 }
