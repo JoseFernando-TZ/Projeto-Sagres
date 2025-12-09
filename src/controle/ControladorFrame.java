@@ -58,7 +58,6 @@ public class ControladorFrame implements ActionListener{
 	
 	
 	public ControladorFrame() {	
-		
 		panelModoDeVisualizacao = new PanelModoDeVisualizacao();
 		panelCadastrarProfessor = new PanelCadastrarProfessor();
 		panelCadastrarAluno = new PanelCadastrarAluno();
