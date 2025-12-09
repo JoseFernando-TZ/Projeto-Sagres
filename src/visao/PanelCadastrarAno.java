@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 import modelo.Aluno;
+import modelo.Ano;
 
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -21,6 +22,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JFormattedTextField;
 
 public class PanelCadastrarAno extends JPanel {
+	
+	Ano an = new Ano();
 	private JButton btnLimparAl;
 	private JLabel lblNewLabel;
 	private JLabel lblAnoEscolar;
@@ -95,12 +98,12 @@ public class PanelCadastrarAno extends JPanel {
 	public void limparCampos() {
 		
 		}
-	//carrega o combo box do grau de parentesco
-		/*public void loadComboBox() {
-			for(String resp : al.getWhoResp()) {
+	
+	public void loadComboBox() {
+			for(String resp : an.getTipoPeriodo()) {
 				getComboBox().addItem(resp);
 			}
-		}*/
+		}
 	public JTextField getTextFieldAnoEscolar() {
 		if (textFieldAnoEscolar == null) {
 			textFieldAnoEscolar = new JTextField();

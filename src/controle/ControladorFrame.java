@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import visao.Frame;
+import visao.PanelBoasVindas;
 import visao.PanelCadastrarAluno;
 import visao.PanelCadastrarAno;
 import visao.PanelCadastrarDisciplina;
@@ -12,10 +13,14 @@ import visao.PanelCadastrarSerie;
 import visao.PanelCadastrarTurma;
 import visao.PanelConsultarAluno;
 import visao.PanelConsultarProfessor;
+import visao.PanelContas;
+import visao.PanelContato;
 import visao.PanelDesempenhoAluno;
+import visao.PanelDespesas;
 import visao.PanelGerarBoletim;
 import visao.PanelInfoAcademicoAluno;
 import visao.PanelInfoPessoalAluno;
+import visao.PanelMensalidades;
 import visao.PanelModoDeVisualizacao;
 
 public class ControladorFrame implements ActionListener{
@@ -41,8 +46,12 @@ public class ControladorFrame implements ActionListener{
 	PanelDesempenhoAluno panelDesempenhoAluno;
 	
 	PanelModoDeVisualizacao panelModoDeVisualizacao;
-	
+	PanelBoasVindas panelBoasVindas;
 	PanelGerarBoletim panelGerarBoletim;
+	PanelMensalidades panelMensalidades;
+	PanelContato panelContato;
+	PanelDespesas panelDespesas;
+	PanelContas panelContas;
 	
 	ControladorCadastrarAluno controladorCadastrarAluno;
 	ControladorCadastrarProfessor controladorCadastrarProfessor;
@@ -61,6 +70,11 @@ public class ControladorFrame implements ActionListener{
 		panelDesempenhoAluno = new PanelDesempenhoAluno();
 		
 		panelGerarBoletim = new PanelGerarBoletim();
+		panelMensalidades = new PanelMensalidades();
+		panelBoasVindas = new PanelBoasVindas();
+		panelContato = new PanelContato();
+		panelDespesas = new PanelDespesas();
+		panelContas = new PanelContas();
 		
 		panelCadastrarDisciplina = new PanelCadastrarDisciplina();
 		panelConsultarAluno = new PanelConsultarAluno();
@@ -84,12 +98,18 @@ public class ControladorFrame implements ActionListener{
 		
 		frame.getItemConsultarAluno().addActionListener(this);
 		frame.getItemConsultarProfessor().addActionListener(this);
+		frame.getItemMensalidades().addActionListener(this);
+		frame.getItemContato().addActionListener(this);
+		frame.getItemReceitasDespesas().addActionListener(this);
+		frame.getItemContas().addActionListener(this);
 		
 		
 		panelConsultarAluno.getBtnVerInfoPessoal().addActionListener(this);
 		panelConsultarAluno.getBtnVerInfoAcademica().addActionListener(this);
 		panelConsultarAluno.getBtnVerDesempenho().addActionListener(this);
+		panelModoDeVisualizacao.getBtnDiretor().addActionListener(this);
 		
+		panelCadastrarAno.loadComboBox();
 	}
 
 	public static void main(String[] args) {
@@ -166,10 +186,42 @@ public class ControladorFrame implements ActionListener{
 			frame.validate();
 		}
 		
+		if(e.getSource() == frame.getItemMensalidades()) {
+			frame.setContentPane(panelMensalidades);
+			frame.repaint();
+			frame.validate();
+		}
 		
+		if(e.getSource() == panelModoDeVisualizacao.getBtnDiretor()) {
+			frame.adicionaMenuDiretor();
+			frame.setContentPane(panelBoasVindas);
+			frame.repaint();
+			frame.validate();
+			
+		}
 		
+		if(e.getSource() == frame.getItemContato()) {
+			
+			frame.setContentPane(panelContato);
+			frame.repaint();
+			frame.validate();
+		}
+		
+		if(e.getSource() == frame.getItemReceitasDespesas()) {
+			
+			frame.setContentPane(panelDespesas);
+			frame.repaint();
+			frame.validate();
+		}
+		
+		if(e.getSource() == frame.getItemContas()) {
+			
+			frame.setContentPane(panelContas);
+			frame.repaint();
+			frame.validate();
+		}
 	}
-	
-	
+
+
 
 }
