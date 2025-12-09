@@ -16,7 +16,7 @@ public class PanelInfoAcademicoAluno extends JPanel{
 	private JLabel lblDisciplinasAluno;
 	private JLabel lblMostrarDisciplinasAluno;
 	private JButton btnEditar;
-	PanelInfoAcademicoAluno(){
+	public PanelInfoAcademicoAluno(){
 		super();
 		this.setLayout(null);
 		this.setBackground(new Color(244, 251, 255));
