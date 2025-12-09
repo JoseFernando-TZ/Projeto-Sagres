@@ -14,19 +14,25 @@ import java.awt.Color;
 
 public class Frame extends JFrame {
 
+	
 	JMenuBar menuBar;
 	JMenu menuCadastrar;
 	JMenu menuConsultar;
 	JMenu menuFinanceiro;
 	JMenu menuContato;
+
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
 	JMenuItem itemCadastroDisciplina;
+	JMenuItem itemCadastroAno;
+	JMenuItem itemCadastroSerie;
+	JMenuItem itemCadastroTurma;
+	JMenuItem itemContato;
+
 	private JMenuItem itemConsultarAluno;
 	private JMenuItem itemConsultarProfessor;
 	JMenuItem itemMensalidades;
 	JMenuItem itemReceitasDespesas;
-	JMenuItem itemFluxo;
 	JMenuItem itemContas;
 	
 	
@@ -45,6 +51,13 @@ public class Frame extends JFrame {
 		menuBar.add(getMenuConsultar());
 		menuBar.add(getMenuFinanceiro());
 		menuBar.add(getMenuContato());
+		
+		getMenuCadastrar().setVisible(false);
+		getMenuConsultar().setVisible(false);
+		getMenuFinanceiro().setVisible(false);
+		getMenuContato().setVisible(false);
+	
+	
 		this.setJMenuBar(menuBar);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -55,6 +68,12 @@ public class Frame extends JFrame {
         }
 	}
 	
+	public void adicionaMenuDiretor() {
+		getMenuCadastrar().setVisible(true);
+		getMenuConsultar().setVisible(true);
+		getMenuFinanceiro().setVisible(true);
+		getMenuContato().setVisible(true);
+	}
 	
 	
 	public JMenu getMenuCadastrar(){
@@ -65,6 +84,9 @@ public class Frame extends JFrame {
 			menuCadastrar.add(getItemCadastroAluno());
 			menuCadastrar.add(getItemCadastroProfessor());
 			menuCadastrar.add(getItemCadastroDisciplina());
+			menuCadastrar.add(getItemCadastroAno());
+			menuCadastrar.add(getItemCadastroSerie());
+			menuCadastrar.add(getItemCadastroTurma());
 		}	
 		return menuCadastrar;
 	}
@@ -85,7 +107,6 @@ public class Frame extends JFrame {
 			menuFinanceiro.setText("Financeiro");
 			menuFinanceiro.add(getItemMensalidades());
 			menuFinanceiro.add(getItemReceitasDespesas());
-			menuFinanceiro.add(getItemFluxo());
 			menuFinanceiro.add(getItemContas());
 		}
 		return menuFinanceiro;
@@ -96,6 +117,7 @@ public class Frame extends JFrame {
 			menuContato = new JMenu();
 			menuContato.setForeground(new Color(255, 255, 255));
 			menuContato.setText("contato");
+			menuContato.add(getItemContato());
 			
 		}
 		return menuContato;
@@ -116,6 +138,7 @@ public class Frame extends JFrame {
 		}	
 		return itemCadastroProfessor;
 	}
+
 	
 	public JMenuItem getItemCadastroDisciplina(){
 		if(itemCadastroDisciplina == null) {
@@ -125,6 +148,30 @@ public class Frame extends JFrame {
 		return itemCadastroDisciplina;
 	}
 	
+	public JMenuItem getItemCadastroAno() {
+		if(itemCadastroAno == null) {
+			itemCadastroAno = new JMenuItem();
+			itemCadastroAno.setText("Ano");
+		}	
+		return itemCadastroAno;
+	}
+	public JMenuItem getItemCadastroSerie() {
+		if(itemCadastroSerie == null) {
+			itemCadastroSerie = new JMenuItem();
+			itemCadastroSerie.setText("Série");
+		}	
+		return itemCadastroSerie;
+	}
+
+
+	public JMenuItem getItemCadastroTurma() {
+		if(itemCadastroTurma == null) {
+			itemCadastroTurma = new JMenuItem();
+			itemCadastroTurma.setText("Turma");
+		}	
+		return itemCadastroTurma;
+	}
+
 	
 	public JMenuItem getItemConsultarAluno() {
 		if (itemConsultarAluno == null) {
@@ -153,18 +200,20 @@ public class Frame extends JFrame {
 		return itemReceitasDespesas;
 	}
 
-	public JMenuItem getItemFluxo() {
-		if(itemFluxo == null) {
-		itemFluxo = new JMenuItem("fluxos/relatórios");
-		}
-		return itemFluxo;
-	}
 
 	public JMenuItem getItemContas() {
 		if(itemContas == null) {
 			itemContas = new JMenuItem("Contas");
 			}
 		return itemContas;
+	}
+	
+	
+	public JMenuItem getItemContato() {
+		if(itemContato == null) {
+			itemContato = new JMenuItem("comunicado");
+		}
+		return itemContato;
 	}
 	
 }

@@ -22,7 +22,7 @@ public class PanelInfoPessoalAluno extends JPanel {
 	private JLabel lblNomeDosPais;
 	private JLabel lblMostrarNomeDosPais;
 	private JButton btnEditar;
-	PanelInfoPessoalAluno(){
+	public PanelInfoPessoalAluno(){
 		super();
 		this.setLayout(null);
 		this.setBackground(new Color(244, 251, 255));
