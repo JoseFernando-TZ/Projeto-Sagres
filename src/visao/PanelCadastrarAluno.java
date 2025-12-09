@@ -285,13 +285,6 @@ public class PanelCadastrarAluno extends JPanel {
 		return comboBox;
 	}
 	
-	//carrega o combo box do grau de parentesco
-	public void loadComboBox() {
-		for(String resp : al.getWhoResp()) {
-			getComboBox().addItem(resp);
-		}
-	}
-	
 	//Formata o TextField do cpf e deixa apenas colocar números
 	public JFormattedTextField getFormattedTextFieldCPF() {
 		
@@ -489,5 +482,11 @@ public class PanelCadastrarAluno extends JPanel {
 		getTextFieldEmail().setText("");
 		getFormattedTextFieldTel().setText("");
 		getFormattedTextFieldDDD().setText("");
+		}
+	//carrega o combo box do grau de parentesco
+		public void loadComboBox() {
+			for(String resp : al.getWhoResp()) {
+				getComboBox().addItem(resp);
+			}
 		}
 }
