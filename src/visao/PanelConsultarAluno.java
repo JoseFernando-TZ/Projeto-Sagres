@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.JComboBox;
 
 public class PanelConsultarAluno extends JPanel{
 	private JTextField txtDigiteAluno;
@@ -19,6 +20,7 @@ public class PanelConsultarAluno extends JPanel{
 	private JButton btnVerMensalidades;
 	private JButton btnVerDesempenho;
 	private JButton btnExcluir;
+	private JComboBox comboBox;
 	
 	public PanelConsultarAluno(){
 		super();
@@ -31,6 +33,7 @@ public class PanelConsultarAluno extends JPanel{
 		add(getBtnVerMensalidades());
 		add(getBtnVerDesempenho());
 		add(getBtnExcluir());
+		add(getComboBox());
 		
 		
 	}
@@ -38,9 +41,9 @@ public class PanelConsultarAluno extends JPanel{
 	public JTextField getTxtDigiteAluno() {
 		if(txtDigiteAluno == null) {
 		txtDigiteAluno = new JTextField();
+		txtDigiteAluno.setToolTipText("Digite aqui o nome do Aluno, CPF, ou numero de matrícula");
 		txtDigiteAluno.setForeground(Color.GRAY);
-		txtDigiteAluno.setText("digite o nome, CPF, série, ou ano do aluno");
-		txtDigiteAluno.setBounds(274, 28, 213, 18);
+		txtDigiteAluno.setBounds(250, 28, 227, 29);
 		txtDigiteAluno.setColumns(10);
 		}
 		
@@ -49,7 +52,7 @@ public class PanelConsultarAluno extends JPanel{
 	public JButton getBtnPesquisa() {
 		if(btnPesquisa == null) {
 			btnPesquisa = new JButton("Pesquisar");
-			btnPesquisa.setBounds(497, 27, 84, 20);
+			btnPesquisa.setBounds(497, 28, 139, 29);
 			
 			}
 		return btnPesquisa;
@@ -57,36 +60,43 @@ public class PanelConsultarAluno extends JPanel{
 	public JButton getBtnVerInfoPessoal() {
 		if (btnVerInfoPessoal == null) {
 			btnVerInfoPessoal = new JButton("ver info pessoal");
-			btnVerInfoPessoal.setBounds(117, 116, 139, 20);
+			btnVerInfoPessoal.setBounds(497, 156, 139, 29);
 		}
 		return btnVerInfoPessoal;
 	}
 	public JButton getBtnVerInfoAcademica() {
 		if (btnVerInfoAcademica == null) {
 			btnVerInfoAcademica = new JButton("ver info academica");
-			btnVerInfoAcademica.setBounds(497, 116, 139, 20);
+			btnVerInfoAcademica.setBounds(497, 116, 139, 29);
 		}
 		return btnVerInfoAcademica;
 	}
 	public JButton getBtnVerMensalidades() {
 		if (btnVerMensalidades == null) {
 			btnVerMensalidades = new JButton("ver mensalidades");
-			btnVerMensalidades.setBounds(117, 212, 139, 20);
+			btnVerMensalidades.setBounds(497, 252, 139, 29);
 		}
 		return btnVerMensalidades;
 	}
 	public JButton getBtnVerDesempenho() {
 		if (btnVerDesempenho == null) {
 			btnVerDesempenho = new JButton("ver desempenho");
-			btnVerDesempenho.setBounds(497, 212, 139, 20);
+			btnVerDesempenho.setBounds(497, 212, 139, 29);
 		}
 		return btnVerDesempenho;
 	}
 	public JButton getBtnExcluir() {
 		if (btnExcluir == null) {
 			btnExcluir = new JButton("excluir");
-			btnExcluir.setBounds(117, 392, 139, 20);
+			btnExcluir.setBounds(117, 383, 139, 29);
 		}
 		return btnExcluir;
+	}
+	private JComboBox getComboBox() {
+		if (comboBox == null) {
+			comboBox = new JComboBox();
+			comboBox.setBounds(250, 69, 227, 29);
+		}
+		return comboBox;
 	}
 }

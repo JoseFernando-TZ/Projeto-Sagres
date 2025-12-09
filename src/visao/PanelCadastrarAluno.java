@@ -369,17 +369,6 @@ public class PanelCadastrarAluno extends JPanel {
 		return textFieldNomeResp;
 	}
 	//Limpa campos de texto do cadastro
-		public void limparCampos() {
-		getFormattedTextFieldCPF().setText("");
-		getTextFieldRG().setText("");
-		getTextFieldRua().setText("");
-		getTextFieldBairro().setText("");
-		getTextFieldNumCasa().setText("");
-		getTextFieldCidade().setText("");
-		getTextFieldEmail().setText("");
-		getFormattedTextFieldTel().setText("");
-		getFormattedTextFieldDDD().setText("");
-		}
 	public JLabel getLbTelResp() {
 		if (lbTelResp == null) {
 			lbTelResp = new JLabel("Telefone:");
@@ -490,4 +479,15 @@ public class PanelCadastrarAluno extends JPanel {
 		}
 		return formattedTextFieldNome;
 	}
+	public void limparCampos() {
+		getFormattedTextFieldCPF().setText("");
+		getTextFieldRG().setText("");
+		getTextFieldRua().setText("");
+		getTextFieldBairro().setText("");
+		getTextFieldNumCasa().setText("");
+		getTextFieldCidade().setText("");
+		getTextFieldEmail().setText("");
+		getFormattedTextFieldTel().setText("");
+		getFormattedTextFieldDDD().setText("");
+		}
 }
