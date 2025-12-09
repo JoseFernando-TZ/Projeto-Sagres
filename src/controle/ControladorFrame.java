@@ -12,6 +12,8 @@ import visao.PanelCadastrarSerie;
 import visao.PanelCadastrarTurma;
 import visao.PanelConsultarAluno;
 import visao.PanelConsultarProfessor;
+import visao.PanelDesempenhoAluno;
+import visao.PanelGerarBoletim;
 import visao.PanelInfoAcademicoAluno;
 import visao.PanelInfoPessoalAluno;
 import visao.PanelModoDeVisualizacao;
@@ -36,8 +38,11 @@ public class ControladorFrame implements ActionListener{
 	
 	PanelInfoPessoalAluno panelInfoPessoalAluno;
 	PanelInfoAcademicoAluno panelInfoAcademicoAluno;
+	PanelDesempenhoAluno panelDesempenhoAluno;
 	
 	PanelModoDeVisualizacao panelModoDeVisualizacao;
+	
+	PanelGerarBoletim panelGerarBoletim;
 	
 	ControladorCadastrarAluno controladorCadastrarAluno;
 	ControladorCadastrarProfessor controladorCadastrarProfessor;
@@ -53,6 +58,9 @@ public class ControladorFrame implements ActionListener{
 		
 		panelInfoPessoalAluno = new PanelInfoPessoalAluno();
 		panelInfoAcademicoAluno = new PanelInfoAcademicoAluno();
+		panelDesempenhoAluno = new PanelDesempenhoAluno();
+		
+		panelGerarBoletim = new PanelGerarBoletim();
 		
 		panelCadastrarDisciplina = new PanelCadastrarDisciplina();
 		panelConsultarAluno = new PanelConsultarAluno();
@@ -76,7 +84,12 @@ public class ControladorFrame implements ActionListener{
 		
 		frame.getItemConsultarAluno().addActionListener(this);
 		frame.getItemConsultarProfessor().addActionListener(this);
+		
+		
 		panelConsultarAluno.getBtnVerInfoPessoal().addActionListener(this);
+		panelConsultarAluno.getBtnVerInfoAcademica().addActionListener(this);
+		panelConsultarAluno.getBtnVerDesempenho().addActionListener(this);
+		
 	}
 
 	public static void main(String[] args) {
@@ -131,12 +144,27 @@ public class ControladorFrame implements ActionListener{
 			frame.validate();
 		}
 		
+		
+		
+		
+		
+		
 		if(e.getSource() == panelConsultarAluno.getBtnVerInfoPessoal()) {
 			frame.setContentPane(panelInfoPessoalAluno);
 			frame.repaint();
 			frame.validate();
 		}
+		if(e.getSource() == panelConsultarAluno.getBtnVerInfoAcademica()) {
+			frame.setContentPane(panelInfoAcademicoAluno);
+			frame.repaint();
+			frame.validate();
+		}
 		
+		if(e.getSource() == panelConsultarAluno.getBtnVerDesempenho()) {
+			frame.setContentPane(panelDesempenhoAluno);
+			frame.repaint();
+			frame.validate();
+		}
 		
 		
 		

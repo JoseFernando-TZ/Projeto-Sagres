@@ -19,7 +19,7 @@ public class Frame extends JFrame {
 	JMenu menuConsultar;
 	JMenu menuFinanceiro;
 	JMenu menuContato;
-	
+
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
 	JMenuItem itemCadastroDisciplina;
@@ -50,6 +50,7 @@ public class Frame extends JFrame {
 		menuBar.add(getMenuConsultar());
 		menuBar.add(getMenuFinanceiro());
 		menuBar.add(getMenuContato());
+	
 	
 		this.setJMenuBar(menuBar);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
