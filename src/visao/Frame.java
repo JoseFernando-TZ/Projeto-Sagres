@@ -19,9 +19,14 @@ public class Frame extends JFrame {
 	JMenu menuConsultar;
 	JMenu menuFinanceiro;
 	JMenu menuContato;
+	
 	JMenuItem itemCadastroAluno;
 	JMenuItem itemCadastroProfessor;
 	JMenuItem itemCadastroDisciplina;
+	JMenuItem itemCadastroAno;
+	JMenuItem itemCadastroSerie;
+	JMenuItem itemCadastroTurma;
+	
 	private JMenuItem itemConsultarAluno;
 	private JMenuItem itemConsultarProfessor;
 	JMenuItem itemMensalidades;
@@ -45,6 +50,7 @@ public class Frame extends JFrame {
 		menuBar.add(getMenuConsultar());
 		menuBar.add(getMenuFinanceiro());
 		menuBar.add(getMenuContato());
+	
 		this.setJMenuBar(menuBar);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -65,6 +71,9 @@ public class Frame extends JFrame {
 			menuCadastrar.add(getItemCadastroAluno());
 			menuCadastrar.add(getItemCadastroProfessor());
 			menuCadastrar.add(getItemCadastroDisciplina());
+			menuCadastrar.add(getItemCadastroAno());
+			menuCadastrar.add(getItemCadastroSerie());
+			menuCadastrar.add(getItemCadastroTurma());
 		}	
 		return menuCadastrar;
 	}
@@ -116,6 +125,7 @@ public class Frame extends JFrame {
 		}	
 		return itemCadastroProfessor;
 	}
+
 	
 	public JMenuItem getItemCadastroDisciplina(){
 		if(itemCadastroDisciplina == null) {
@@ -125,6 +135,30 @@ public class Frame extends JFrame {
 		return itemCadastroDisciplina;
 	}
 	
+	public JMenuItem getItemCadastroAno() {
+		if(itemCadastroAno == null) {
+			itemCadastroAno = new JMenuItem();
+			itemCadastroAno.setText("Ano");
+		}	
+		return itemCadastroAno;
+	}
+	public JMenuItem getItemCadastroSerie() {
+		if(itemCadastroSerie == null) {
+			itemCadastroSerie = new JMenuItem();
+			itemCadastroSerie.setText("Série");
+		}	
+		return itemCadastroSerie;
+	}
+
+
+	public JMenuItem getItemCadastroTurma() {
+		if(itemCadastroTurma == null) {
+			itemCadastroTurma = new JMenuItem();
+			itemCadastroTurma.setText("Turma");
+		}	
+		return itemCadastroTurma;
+	}
+
 	
 	public JMenuItem getItemConsultarAluno() {
 		if (itemConsultarAluno == null) {
